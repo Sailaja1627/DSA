@@ -1,12 +1,9 @@
-class Solution{
-    public boolean isPalindrome(int n) {
-        int m=n;
-        int r=0;
-        while(n>0){
-            int k=n%10;
-            r=(r*10)+k;
-            n=n/10;
+class Solution {
+    public boolean isPrime(int n) {
+        if(n<=1) return false;
+        for(int i=2;i*i<=n;i++){
+            if(n%i==0) return false;
         }
-        return r==m;
+        return true;
     }
 }
