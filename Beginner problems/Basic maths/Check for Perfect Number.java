@@ -1,11 +1,17 @@
 class Solution {
-    public int countDigit(int n) {
-        if(n==0) return 1;
-        int c=0;
-        while(n>0){
-            n=n/10;
-            c++;
+    public boolean isPerfect(int n) {
+        if(n<=1) return false;
+        int m=n;
+        int r=1;
+        for(int i=2;i*i<=n;i++){
+            if(n%i==0){
+                r=r+i;
+                if(i!=n/i){
+                    r+=n/i;
+                }
+            }
         }
-        return c;
+        return r==m;
+
     }
 }
